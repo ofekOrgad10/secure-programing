@@ -1,0 +1,1 @@
+docker exec $(docker ps -f "ancestor=web-server" -q) /bin/bash -c 'sed '\''4s/.*/include("db_config.php");/'\'' /var/www/html/os_sqli.php  > /a.txt && cat /a.txt > /var/www/html/os_sqli.php && rm /a.txt'
